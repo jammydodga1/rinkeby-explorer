@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "ethers": "^5.4.3",
+    "jquery": "^3.6.0",
     "regenerator-runtime": "^0.13.9",
     "tablesort": "^5.2.1"
   },

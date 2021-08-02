@@ -1,11 +1,38 @@
-<script src="./block-page.js"></script>
-
+<!-- <script src="./block-page.js"></script>
+<script type="text/javascript">
+  console.log(window.opener.cell1)
+</script> -->
 <!-- <script>
 function get(){
   console.log(cell1)
 }
 </script> -->
 
+
+<html>
+  <head>
+    <script src="jquery.js"></script>
+    <script>
+    $(function(){
+      $(`#${block.number}`).load("index.html"); 
+    });
+    </script>
+  </head>
+
+  <body>
+     <div id="divId" style="display:none;"></div>
+  </body>
+</html>
+<!-- <script>
+  $(function() {
+    $(`${block.number}`).on("click",function(e) {
+      e.preventDefault(); // cancel the link itself
+      $.post(this.href,function(data) {
+        $("#someContainer").html(data);
+      });
+    });
+  });
+</script> -->
 
 
 

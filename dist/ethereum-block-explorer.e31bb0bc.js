@@ -30733,22 +30733,28 @@ function printBlock(block) {
   var cell3 = row.insertCell(2);
   var cell4 = row.insertCell(3);
   var cell5 = row.insertCell(4);
-  var cell6 = row.insertCell(5);
-  cell1.innerHTML = block.number;
+  var cell6 = row.insertCell(5); // cell1.innerHTML = block.number;
 
-  cell1.onclick = function () {
-    localStorage.setItem("myValue", block.number);
-    window.location.href = "http://localhost:1234/block-page.html";
-  };
-
+  cell1.innerHTML = "<a href =\"http://localhost:1234/block-page.html\" id = ".concat(block.number, " >").concat(block.number, "</a>");
   cell2.innerHTML = time2TimeAgo(block.timestamp);
   cell3.innerHTML = block.transactions.length;
   cell4.innerHTML = block.miner;
   cell5.innerHTML = block.gasUsed;
   cell6.innerHTML = block.gasLimit;
-}
+} // const init = function(e) {
+//   let table = document.querySelector("#blocks");
+//   // let trValue = table.getElementsByTagName('tr')[0]
+//   let aValue = table.getElementsByTagName('a')[0]
+//
+//   aValue.addEventListener('click', function(){
+//     localStorage.set
+//     window.document.location = './block-page.html'
+//   });
+// }
+// document.addEventListener('DOMContentLoaded', function(){
+//   init();
+// });
 
-module.exports = blockNumber;
 
 function time2TimeAgo(ts) {
   var d = new Date();
@@ -30778,7 +30784,9 @@ function time2TimeAgo(ts) {
   if (seconds < 60) {
     return Math.floor(seconds) + " seconds ago";
   }
-} // document.getElementById("block").onclick = function () {
+}
+
+module.exports = blockNumber; // document.getElementById("block").onclick = function () {
 //   location.href = "http://localhost:1234/block-page.html";
 // };
 },{"regenerator-runtime/runtime":"node_modules/regenerator-runtime/runtime.js","ethers":"node_modules/ethers/lib.esm/index.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -30809,7 +30817,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52470" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54070" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

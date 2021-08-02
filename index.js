@@ -24,11 +24,8 @@ function printBlock(block){
   const cell4 = row.insertCell(3);
   const cell5 = row.insertCell(4);
   const cell6 = row.insertCell(5);
-  cell1.innerHTML = block.number;
-  cell1.onclick = function () {
-    localStorage.setItem("myValue", block.number);
-    window.location.href = "http://localhost:1234/block-page.html";
-  };
+  // cell1.innerHTML = block.number;
+  cell1.innerHTML = `<a href ="http://localhost:1234/block-page.html" id = ${block.number} >${block.number}</a>`
   cell2.innerHTML = time2TimeAgo(block.timestamp)
   cell3.innerHTML = block.transactions.length;
   cell4.innerHTML = block.miner;
@@ -36,9 +33,19 @@ function printBlock(block){
   cell6.innerHTML = block.gasLimit;
 }
 
-
-module.exports = blockNumber;
-
+// const init = function(e) {
+//   let table = document.querySelector("#blocks");
+//   // let trValue = table.getElementsByTagName('tr')[0]
+//   let aValue = table.getElementsByTagName('a')[0]
+//
+//   aValue.addEventListener('click', function(){
+//     localStorage.set
+//     window.document.location = './block-page.html'
+//   });
+// }
+// document.addEventListener('DOMContentLoaded', function(){
+//   init();
+// });
 
 
 function time2TimeAgo(ts) {
@@ -66,6 +73,7 @@ function time2TimeAgo(ts) {
        return Math.floor(seconds) + " seconds ago";
      }
 }
+module.exports = blockNumber;
 
 // document.getElementById("block").onclick = function () {
 //   location.href = "http://localhost:1234/block-page.html";
